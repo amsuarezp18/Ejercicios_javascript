@@ -1,19 +1,16 @@
 // Ejercicio 1
 function secret(messages, type, key){
-	var value_return = []
-    if( type == 'encrypt'){
-        for ( let index = 0; index < messages.length; index++){	
-              value_return.push(messages[index]+key);
-			}
-		}
-	else if( type == 'decrypt'){
-			for ( let index = 0; index < messages.length; index++){
-				value_return.push(messages[index]-key);
-			}
+
+	if(type=='decrypt'){
+		key *=-1
+	  }
 	
-		}
-		return value_return;
-	}
+	for ( let index = 0; index < messages.length; index++){	
+		messages[index] = messages[index] + key;
+		}  
+	
+	return messages;
+  }
 	
 // Prueba de ejercicio 1	
 // secret([1, 2, 3, 1], 'encrypt', 1);
